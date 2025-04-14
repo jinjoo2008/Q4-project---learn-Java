@@ -1,0 +1,8 @@
+Week 1:
+  learned the basic setup of a Java program
+  learned how to use "System.out.println()"
+  learned how to write comments (same as JavaScript)
+  learned about main() methods and classes
+
+  I learned about data types
+  
