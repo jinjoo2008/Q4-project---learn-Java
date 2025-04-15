@@ -41,6 +41,8 @@ Comparison operations
 - \== equal to
 - \!= not equal to
 
+- \== can only compare numbers whereas .equals() can compare anything (including strings!)
+
 Compound Assignment Operators
 - \+=
 - \-=
