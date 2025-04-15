@@ -27,30 +27,30 @@ Primitive Data Types
 - final keyword: value of a variable cannot be changed if the variable was declared using the final keyword
 
 Math operations (order of operations: PEMDAS)
-+ addition
-- subtraction
-* multiplication
-/ division
-% modulo (yields the remainder)
+- \+ addition
+- \- subtraction
+- \* multiplication
+- \/ division
+- \% modulo (yields the remainder)
 
 Comparison operations
-> greater than
-< less than
->= greater than or equal to
-<= less than or equal to
-== equal to
-!= not equal to
+- \> greater than
+- \< less than
+- \>= greater than or equal to
+- \<= less than or equal to
+- \== equal to
+- \!= not equal to
 
 Compound Assignment Operators
-+=
--=
-*=
-/=
-%=
+- \+=
+- \-=
+- \*=
+- \/=
+- \%=
 
 Increment and Decrement Operators
-++ adds by 1
--- subtracts by 1
+- \++ adds by 1
+- \-- subtracts by 1
 
 static typing - catches errors
 
