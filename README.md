@@ -19,7 +19,7 @@ public satic void main(String [] args) {
 
 learned:
 Primitive Data Types
-you have to name the data types, so try to name them appropriately (second words and on should start with a capital letter, don't use a space to seperate words)
+- you have to name the data types, so try to name them appropriately (second words and on should start with a capital letter, don't use a space to seperate words)
 - int: integer number
 - double: any number
 - char: single character
