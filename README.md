@@ -43,6 +43,9 @@ short no = 10;
 float k = (float)12.5;
 
 double pi = 3.14;
+
+// Value cannot be changed:
+final double PI = 3.14;
 ```
 
 Math operations (order of operations: PEMDAS)
@@ -51,6 +54,23 @@ Math operations (order of operations: PEMDAS)
 - \* multiplication
 - \/ division
 - \% modulo (yields the remainder)
+
+```java
+int a = 20;
+int b = 10;
+
+int result;
+
+result = a + b;  // 30
+
+result = a - b;  // 10
+
+result = a * b;  // 200
+
+result = a / b;  // 2
+
+result = a % b;  // 0
+```
 
 Comparison operations
 - \> greater than
@@ -62,6 +82,14 @@ Comparison operations
 
 - \== can only compare numbers whereas .equals() can compare anything (including strings!)
 
+```java
+int a = 5;
+int b = 3;
+
+boolean result = a > b;
+// result now holds the boolean value true
+```
+
 Compound Assignment Operators
 - \+=
 - \-=
@@ -69,9 +97,27 @@ Compound Assignment Operators
 - \/=
 - \%=
 
+```java
+int number = 5;
+
+number += 3; // Value is now 8
+number -= 4; // Value is now 4
+number *= 6; // Value is now 24
+number /= 2; // Value is now 12
+number %= 7; // Value is now 5
+```
+
 Increment and Decrement Operators
 - \++ adds by 1
 - \-- subtracts by 1
+
+```java
+int numApples = 5;
+numApples++; // Value is now 6
+
+int numOranges = 5;
+numOranges--; // Value is now 4
+```
 
 static typing - catches errors
 
