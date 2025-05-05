@@ -125,3 +125,4 @@ j = 20;             // won't compile, no type is given
 char name = "Lil";  // won't compile, wrong data type
 ```
 
+## Week 2:
