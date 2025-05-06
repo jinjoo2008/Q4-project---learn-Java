@@ -414,3 +414,204 @@ String uppercase = str.toUpperCase();
 String lowercase = str.toLowerCase();
 // lowercase = "hello world!"
 ```
+
+the "static" keyword: 
+```java
+public class ATM{
+  // Static variables
+  public static int totalMoney = 0;
+  public static int numATMs = 0;
+
+  // A static method
+  public static void averageMoney(){
+    System.out.println(totalMoney / numATMs);
+  }
+```
+
+Static methods and variables: associated with the class as a whole, not objects of the class. Both are used by using the name of the class followed by the . operator
+```java
+public class ATM{
+  // Static variables
+  public static int totalMoney = 0;
+  public static int numATMs = 0;
+
+  // A static method
+  public static void averageMoney(){
+    System.out.println(totalMoney / numATMs);
+  }
+
+  public static void main(String[] args){
+
+    //Accessing a static variable
+    System.out.println("Total number of ATMs: " + ATM.numATMs); 
+
+    // Calling a static method
+    ATM.averageMoney();
+  }
+
+}
+```
+
+Static methods: cannot access or change the values of instance variables
+```java
+class ATM{
+// Static variables
+  public static int totalMoney = 0;
+  public static int numATMs = 0; 
+
+  public int money = 1;
+
+  // A static method
+  public static void averageMoney(){
+    // Can not use this.money here because a static method can't access instance variables
+  }
+
+}
+```
+
+Non-static and static method: can access or change the values of static variables
+```java
+class ATM{
+// Static variables 
+  public static int totalMoney = 0; 
+  public static int numATMs = 0; 
+  public int money = 1;
+
+ // A static method interacting with a static variable 
+  public static void staticMethod(){ 
+    totalMoney += 1;
+   } 
+
+  // A non-static method interactingwith a static variable 
+  public void nonStaticMethod(){
+    totalMoney += 1; 
+  } 
+}
+```
+
+Static Methods and the "this." Keyword: Static methods do not have a this reference and are therefore unable to use the class’s instance variables or call non-static methods
+```java
+public class DemoClass{
+
+  public int demoVariable = 5;
+
+  public void demoNonStaticMethod(){
+    
+  }
+  public static void demoStaticMethod(){
+    // Can't use "this.demoVariable" or "this.demoNonStaticMethod()"
+  }
+}
+```
+
+keywords "public" and "private": define the access of classes, instance variables, constructors, and methods
+- private restricts access to only the class that declared the structure, while public allows for access from any class
+
+Encapsulation: a technique used to keep implementation details hidden from other classes. Its aim is to create small bundles of logic
+
+private keyword: encapsulates instance variables, prevents other classes from directly accessing these variables
+```java
+public class CheckingAccount{
+  // Three private instance variables
+  private String name;
+  private int balance;
+  private String id;
+}
+```
+
+accessor methods: returns the value of a private variable. This gives other classes access to that value stored in that variable. without having direct access to the variable itself (Accessor methods take no parameters and have a return type that matches the type of the variable they are accessing)
+```java
+public class CheckingAccount{
+  private int balance;
+  
+  //An accessor method
+  public int getBalance(){
+    return this.balance;
+  }
+}
+```
+
+mutator methods: resets the value of a private variable. This gives other classes the ability to modify the value stored in that variable without having direct access to the variable itself (Mutator methods take one parameter whose type matches the type of the variable it is modifying. Mutator methods usually don’t return anything)
+```java
+public class CheckingAccount{
+  private int balance;
+  
+  //A mutator method
+  public void setBalance(int newBalance){
+    this.balance = newBalance;
+  }
+}
+```
+
+local variables: can only be used within the scope that they were defined in. This scope is often defined by a set of curly brackets. Variables can’t be used outside of those brackets
+```java
+public void exampleMethod(int exampleVariable){
+  // exampleVariable can only be used inside these curly brackets.
+}
+```
+
+the this keyword with variables: can be used to designate the difference between instance variables and local variables. Variables with this. reference an instance variable.
+```java
+public class Dog{
+  public String name;
+
+  public void speak(String name){
+    // Prints the instance variable named name
+    System.out.println(this.name);
+
+    // Prints the local variable named name
+    System.out.println(name);
+  }
+}
+```
+
+the this keyword with methods: can be used to call methods when writing classes
+```java
+public class ExampleClass{
+  public void exampleMethodOne(){
+    System.out.println("Hello");
+  }
+
+  public void exampleMethodTwo(){
+    //Calling a method using this.
+    this.exampleMethodOne();
+    System.out.println("There");
+  }
+}
+```
+
+Static methods: methods that can be called within a program without creating an object of the class
+```java
+// static method
+public static int getTotal(int a, int b) {
+  return a + b;
+}
+
+public static void main(String[] args) {
+  int x = 3;
+  int y = 2;
+  System.out.println(getTotal(x,y)); // Prints: 5
+}
+```
+
+Calling a Static method: can be called by appending the dot operator to a class name followed by the name of the method
+```java
+int largerNumber = Math.max(3, 10); // Call static method
+System.out.println(largerNumber); // Prints: 10
+
+```
+
+Math class (which is part of the java.lang package) contains a variety of static methods that can be used to perform numerical calculations
+```java
+System.out.println(Math.abs(-7.0)); // Prints: 7
+
+System.out.println(Math.pow(5, 3)); // Prints: 125.0
+
+System.out.println(Math.sqrt(52)); // Prints: 7.211102550927978
+```
+
+
+
+
+
+
