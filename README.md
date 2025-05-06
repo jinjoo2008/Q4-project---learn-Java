@@ -297,5 +297,120 @@ public class Students {
 ```
 
 ## Week 3:
+learned:
 
+while loop: repeatedly runs code as long as the given condition remains true
+```java
+int count = 0;
+while (count < 5) {
+    System.out.println("Count is: " + count);
+    count++;
+}
+```
 
+for loop: repeats code over a range of values by initializing a variable, checking a condition, and updating the variable each iteration
+```java
+public class LoopExample {
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Iteration " + i);
+        }
+    }
+}
+/*
+Iteration 0
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+*/
+```
+
+for-each statement: allows you to directly loop through each item in an array or ArrayList and perform some action with each item
+When creating a for-each statement, you must include the for keyword and two expressions inside of parentheses, separated by a colon. 
+These include:
+1. The handle for an element we’re currently iterating over.
+2. The source array or ArrayList we’re iterating over.
+```java
+// array of numbers
+int[] numbers = {1, 2, 3, 4, 5};
+
+// for-each loop that prints each number in numbers
+// int num is the handle while numbers is the source array
+for (int num : numbers) {  
+	System.out.println(num);
+}
+```
+
+Strings:
+- .length() --> returns the total number of characters – the length – of a String.
+```java
+String str = "Codecademy";  
+
+System.out.println(str.length());
+// prints 10
+```
+
+- .indexOf() --> returns the first occurence of a character or a substring in a String. The character/substring that you want to find the index of goes inside of the () (If indexOf() cannot find the character or substring, it will return -1)
+```java
+String str = "Hello World!";
+
+System.out.println(str.indexOf("l"));
+// prints 2
+
+System.out.println(str.indexOf("Wor"));
+// prints 6
+
+System.out.println(str.indexOf("z"));
+// prints -1
+```
+
+- .concat() --> append one String to the end of another String. This method returns a String representing the text of the combined strings
+```java
+String s1 = "Hello";
+String s2 = " World!";
+
+String s3 = s1.concat(s2);
+// concatenates strings s1 and s2
+
+System.out.println(s3);
+// prints "Hello World!"
+```
+
+- .equals() --> ests for equality between two Strings (equals() compares the contents of each String. If all of the characters between the two match, the method returns true. If any of the characters do not match, it returns false. Additionally, if you want to compare two strings without considering upper/lower cases, you can use .equalsIgnoreCase())
+```java
+String s1 = "Hello";
+String s2 = "World";
+
+System.out.println(s1.equals("Hello"));
+// prints true
+
+System.out.println(s2.equals("Hello"));
+// prints false 
+
+System.out.println(s2.equalsIgnoreCase("world"));
+// prints true 
+```
+
+- .charAt() --> returns the character of a String at a specified index. The index value is passed inside of the (), and should lie between 0 and length()-1
+```java
+String str = "This is a string";
+
+System.out.println(str.charAt(0));
+// prints 'T'
+
+System.out.println(str.charAt(15));
+// prints 'g'
+```
+
+- .toUpperCase() --> returns the string value converted to uppercase
+- .toLowerCase() --> returns the string value converted to lowercase
+```java
+String str = "Hello World!";
+
+String uppercase = str.toUpperCase();
+// uppercase = "HELLO WORLD!"
+
+String lowercase = str.toLowerCase();
+// lowercase = "hello world!"
+```
