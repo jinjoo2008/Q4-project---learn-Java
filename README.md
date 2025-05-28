@@ -609,6 +609,218 @@ System.out.println(Math.pow(5, 3)); // Prints: 125.0
 
 System.out.println(Math.sqrt(52)); // Prints: 7.211102550927978
 ```
+## Week 4:
+learned:
+
+Inheritance: an important feature of object-oriented programming in Java. It allows for one class (child class) to inherit the fields and methods of another class (parent class). For instance, we might want a child class Dog to inherent traits from a more general parent class Animal.
+- When defining a child class in Java, we use the keyword extends to inherit from a parent class.
+```java
+// Parent Class
+class Animal {
+  // Animal class members
+}
+
+// Child Class
+class Dog extends Animal {
+  // Dog inherits traits from Animal 
+  
+  // additional Dog class members
+}
+```
+
+Main() Method: In simple Java programs, you may work with just one class and one file. However, as your programs become more complex you will work with multiple classes, each of which requires its own file. Only one of these files in the Java package requires a main() method, and this is the file that will be run in the package.
+For example, say we have two files in our Java package for two different classes: 
+- Shape, the parent class.
+- Square, the child class.
+If the Java file containing our Shape class is the only one with a main() method, this is the file that will be run for our Java package.
+```java
+// Shape.java file 
+class Shape {
+  public static void main(String[] args) {
+  	Square sq = new Square();
+  }
+}
+
+// Square.java file 
+class Square extends Shape {
+  
+}
+```
+
+super(): a child class inherits its parent’s fields and methods, meaning it also inherits the parent’s constructor. Sometimes we may want to modify the constructor, in which case we can use the super() method, which acts like the parent constructor inside the child class constructor.
+- Alternatively, we can also completely override a parent class constructor by writing a new constructor for the child class.
+```java
+// Parent class
+class Animal {
+  String sound;
+  Animal(String snd) {
+    this.sound = snd;
+  }
+}
+
+// Child class
+class Dog extends Animal { 
+  // super() method can act like the parent constructor inside the child class constructor.
+  Dog() {
+    super("woof");
+  } 
+  // alternatively, we can override the constructor completely by defining a new constructor.
+  Dog() {
+    this.sound = "woof";
+  }
+}
+```
+
+Protected and Final Keywords: When creating classes in Java, sometimes we may want to control child class access to parent class members. We can use the protected and final keywords to do just that. Protected keeps a parent class member accessible to its child classes, to files within its own package, and by subclasses of this class in another package. Adding final before a parent class method’s access modifier makes it so that any child classes cannot modify that method - it is immutable.
+```java
+class Student {
+  protected double gpa;
+  // any child class of Student can access gpa 
+  
+  final protected boolean isStudent() {
+    return true;
+  }
+  // any child class of Student cannot modify isStudent()
+}
+```
+
+Polymorphism: Polymorphism allows a child class to share the information and behavior of its parent class while also incorporating its own functionality. This allows for the benefits of simplified syntax and reduced cognitive overload for developers.
+```java
+// Parent class
+class Animal {
+  public void greeting() {
+    System.out.println("The animal greets you.");
+  }
+}
+
+// Child class
+class Cat extends Animal {
+  public void greeting() {
+    System.out.println("The cat meows.");
+  }
+}
+
+class MainClass {
+  public static void main(String[] args) {
+    Animal animal1 = new Animal();  // Animal object
+    Animal cat1 = new Cat();  // Cat object
+    animal1.greeting(); // prints "The animal greets you."
+    cat1.greeting(); // prints "The cat meows."
+  }
+}
+```
+
+Method Overriding: we can easily override parent class methods in a child class. Overriding a method is useful when we want our child class method to have the same name as a parent class method but behave a bit differently.
+In order to override a parent class method in a child class, we need to make sure that the child class method has the following in common with its parent class method:
+- Method name
+- Return type
+- Number and type of parameters
+Additionally, we should include the @Override keyword above our child class method to indicate to the compiler that we want to override a method in the parent class.
+```java
+// Parent class 
+class Animal {
+  public void eating() {
+  	System.out.println("The animal is eating.");
+  }
+}
+
+// Child class 
+class Dog extends Animal {
+  // Dog's eating method overrides Animal's eating method
+	@Override
+  public void eating() {
+    System.out.println("The dog is eating.");
+  }
+}
+```
+
+Child classes in Arrays and ArrayLists: polymorphism allows us to put instances of different classes that share a parent class together in an array or ArrayList. For example, if we have an Animal parent class with child classes Cat, Dog, and Pig we can set up an array with instances of each animal and then iterate through the list of animals to perform the same action on each.
+```java
+// Animal parent class with child classes Cat, Dog, and Pig. 
+Animal cat1, dog1, pig1;
+
+cat1 = new Cat();
+dog1 = new Dog();
+pig1 = new Pig();
+
+// Set up an array with instances of each animal
+Animal[] animals = {cat1, dog1, pig1};
+
+// Iterate through the list of animals and perform the same action with each
+for (Animal animal : animals) {
+  
+  animal.sound();
+  
+}
+```
+
+Nested Iteration statements: iteration statements that appear in the body of another iteration statement. When a loop is nested inside another loop, the inner loop must complete all its iterations before the outer loop can continue
+```java
+for(int outer = 0; outer < 3; outer++){
+    System.out.println("The outer index is: " + outer);
+    for(int inner = 0; inner < 4; inner++){
+        System.out.println("\tThe inner index is: " + inner);
+    }
+}
+```
+Declaring 2D Arrays: 2D arrays are stored as arrays of arrays. Therefore, the way 2D arrays are declared is similar 1D array objects. 2D arrays are declared by defining a data type followed by two sets of square brackets.
+```java
+int[][] twoDIntArray;
+String[][] twoDStringArray;
+double[][] twoDDoubleArray;
+```
+Accsessing 2D Array Elements: when accessing the element from a 2D array using arr[first][second], the first index can be thought of as the desired row, and the second index is used for the desired column. Just like 1D arrays, 2D arrays are indexed starting at 0.
+```java
+//Given a 2d array called `arr` which stores `int` values
+int[][] arr = {{1,2,3},
+               {4,5,6}};
+
+//We can get the value `4` by using
+int retrieved = arr[1][0];
+```
+Initializer Lists: can be used to quickly give initial values to 2D arrays. This can be done in two different ways.
+1. If the array has not been declared yet, a new array can be declared and initialized in the same step using curly brackets.
+2. If the array has already been declared, the new keyword along with the data type must be used in order to use an initializer list
+```java
+// Method one: declaring and intitializing at the same time
+double[][] doubleValues = {{1.5, 2.6, 3.7}, {7.5, 6.4, 5.3}, {9.8,  8.7, 7.6}, {3.6, 5.7, 7.8}};
+
+// Method two: declaring and initializing separately:
+String[][] stringValues;
+stringValues = new String[][] {{"working", "with"}, {"2D", "arrays"}, {"is", "fun"}};
+```
+Modifing 2D Array Elements: elements in a 2D array can be modified in a similar fashion to modifying elements in a 1D array. Setting arr[i][j] equal to a new value will modify the element in row i column j of the array arr.
+```java
+double[][] doubleValues = {{1.5, 2.6, 3.7}, {7.5, 6.4, 5.3}, {9.8,  8.7, 7.6}, {3.6, 5.7, 7.8}};
+
+doubleValues[2][2] = 100.5;
+// This will change the value 7.6 to 100.5
+```
+Row-Major Order: refers to an ordering of 2D array elements where traversal occurs across each row - from the top left corner to the bottom right. In Java, row major ordering can be implemented by having nested loops where the outer loop variable iterates through the rows and the inner loop variable iterates through the columns. Note that inside these loops, when accessing elements, the variable used in the outer loop will be used as the first index, and the inner loop variable will be used as the second index.
+```java
+for(int i = 0; i < matrix.length; i++) {
+    for(int j = 0; j < matrix[i].length; j++) {
+        System.out.println(matrix[i][j]);
+    }
+}
+```
+Column-Major Order: refers to an ordering of 2D array elements where traversal occurs down each column - from the top left corner to the bottom right. In Java, column major ordering can be implemented by having nested loops where the outer loop variable iterates through the columns and the inner loop variable iterates through the rows. Note that inside these loops, when accessing elements, the variable used in the outer loop will be used as the second index, and the inner loop variable will be used as the first index.
+```java
+for(int i = 0; i < matrix[0].length; i++) {
+    for(int j = 0; j < matrix.length; j++) {
+        System.out.println(matrix[j][i]);
+    }
+}
+```
+Enhanced For Loops: enhanced for loops can be used to traverse 2D arrays. Because enhanced for loops have no index variable, they are better used in situations where you only care about the values of the 2D array - not the location of those values
+```java
+for(String[] rowOfStrings : twoDStringArray) {
+    for(String s : rowOfStrings) {
+        System.out.println(s);
+    }
+}
+```
+
 
 
 
