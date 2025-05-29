@@ -824,6 +824,7 @@ for(String[] rowOfStrings : twoDStringArray) {
 ## Week 5:
 Created Flappy Bird Game!! 
 look @ Flappy Bird Repository for code!
+https://www.youtube.com/watch?v=Xw2MEG-FBsE&t=60s 
 
 ## Week 6:
 learned:
@@ -920,7 +921,10 @@ Thread: a part of a program that follows a path of execution independently. Mult
 
 Race Conditions in Java Threads: occurs when a multi-threaded program produces unexpected behavior due to the timing or interleaving of the execution of threads.
 
-
+## Week 7:
+Created PacMan Game!! 
+look @ PacMan Repository for code!
+https://www.youtube.com/watch?v=lB_J-VNMVpE&list=PLnKe36F30Y4Y1XQOqNsL9Fgg_p6nYhcng
 
 
 
