@@ -825,6 +825,101 @@ for(String[] rowOfStrings : twoDStringArray) {
 Created Flappy Bird Game!! 
 look @ Flappy Bird Repository for code!
 
+## Week 6:
+learned:
+
+Scanner class: used to read user input in a Java program. It requires declaration within a program before a user of the program is prompted to input values.
+
+IOExceptions: refers to any errors that a program may encounter that are related to the input or output of a Java program.
+
+Compiling Java Programs: Java programs must first be compiled into bytes, and only then can they be run using the terminal or command prompt.
+
+File input Stream: used to read data from a file into the program.
+
+File output Stream: used to output data from a program into a file on your computer.
+
+System.out: In order to print output using a Java program, a developer can use the following three commands:
+- System.out.print(): prints in the same line a when a program is running
+- System.out.println(): prints output in a new line
+- System.out.printf(): prints formatted string. It allows for the use of format specifiers such as “%s” or “%c” that can be used to insert variable values
+
+
+Serializable Field Objects: During serialization in Java, associated field objects must be serializable.
+
+Writing Serialized Objects to a File: a serialized object may be written to a file and read using FileOutputStream and FileInputStream.
+
+writeObject() and readObject(): implementing the writeObject() and readObject() will define a customized way of serializing and deserializing an object.
+
+Serialization: the process of converting an object’s state into a stream of bytes.
+
+serialVersionUID: a class implementing Serializable needs a serialVersionUID to confirm class compatibility during deserialization.
+
+Serializable Class: A class (or any of its parent classes) must implement the Serialiazable interface (or any of its children interfaces) in order to be serializable.
+
+Deserialization: the process of converting a stream of bytes, created after serialization, back into an object.
+
+Benefits of Serialization: Serialization is beneficial when an object needs to be stored or sent over a network.
+
+Static and Transient Fields: any field not marked as static or transient is serializable.
+
+Universal (Generic) Algorithms: universal (generic) algorithms can be created for different types.
+
+Generics: generics allow classes and interface types to be used as parameters to define classes, interfaces, or methods.
+- Benefits: generics allow for stronger type checking and bug detection at compile time.
+
+Diamond Operators: the diamond operator (<>) is used to declare the type parameter.
+
+super: When using generics, the super keyword is used to define a lower bound type on a wildcard.
+
+Wildcards: the wildcard (?) is used to specify an unknown generic type parameter.
+
+extends: When using generics, the extends keyword is used to define an upper bound type on type parameter or wildcard.
+
+Wrapper Classes: provided to allow primitive values to be used with generic code.
+
+Collections: stores many elements within a single object.
+
+Collections Framework: provides ready to use collection data structures and algorithms.
+
+Aggregrate Operations: When using collections, aggregate operations are used to access and modify a stream of elements.
+
+Collection Interface: the root interface of the collections framework.
+
+List Interface: used to store elements in an ordered collection.
+
+Set Interface: used to store unique elements in a collection.
+
+Queue and Deque Interfaces: used to hold elements in a collection to process in a specific order.
+
+Map Interface: stores elements as key-value pairs.
+
+Iterators and Enhanced For Loops: used to traverse collections in Java.
+
+Type Parameter: Collections are generic, and a type parameter must be specified.
+
+Extending the Thread class: can be created by extending the Thread class.
+
+Creating Threads Using Lambda Expressions: can be created using lambda expressions.
+
+Purpose of Threads: Threads are used in Java to improve performance for processes that can be split into code that can run concurrently.
+
+Java Thread Lifecycle: A Java thread can, throughout its lifecycle, be in New, Running/Active, Blocked, Waiting, or Terminated/Joined states.
+
+Thread Communication in Java: Threads can communicate with each other in Java by polling the state of a shared resource.
+
+Java Thread Lifecycle Methods: A programmer can control Java thread lifecycle states using the following methods:
+- .start()
+- .sleep()
+- .join()
+- .isAlive()
+Threads Communication Methods In Java: Threads can communicate with each other in Java using the .wait(), .notify() and .notifyAll() methods.
+
+Synchronized in Java: the synchronized keyword is used to ensure that methods in two different threads do not access a shared resource at the same time.
+
+Thread: a part of a program that follows a path of execution independently. Multiple threads can run at the same time (concurrently).
+
+Race Conditions in Java Threads: occurs when a multi-threaded program produces unexpected behavior due to the timing or interleaving of the execution of threads.
+
 
 
 
