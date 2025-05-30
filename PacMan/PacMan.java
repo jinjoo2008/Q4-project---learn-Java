@@ -1,4 +1,4 @@
-//I followed this YouTube tutorial! https://www.youtube.com/watch?v=lB_J-VNMVpE&t=323s 
+//Followed this YouTube tutorial! https://www.youtube.com/watch?v=lB_J-VNMVpE&t=323s 
 import java.awt.*;
 import java.awt.event.*;
 import java.util.HashSet;
